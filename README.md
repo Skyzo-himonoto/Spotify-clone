@@ -4,62 +4,62 @@ Project ini clone platform musik Spotify yang dibangun menggunakan ekosistem mod
 
 > **Catatan:** Cari tahu terlebih dahulu di AI karena files ini belum 100% mempunyai database/fitur yang lengkap bisa ke email saya : skyzoc1a@gmail.com atau wa : 088225879928
 
-## 🛠️ Persyaratan Sistem (Manual Setup)
+​🚀 STEP 1: PERSIAPAN LINGKUNGAN (PILIH SALAH SATU)
+​A. Untuk Pengguna Laptop/PC (VS Code/Terminal)
+​Jalankan perintah ini berurutan:
 
-Karena project ini menggunakan **React** dengan **Vite**, pastikan lu udah siapin bahan-bahan di bawah ini di lingkungan kerja lu (Replit/Local):
-
-### 1. Struktur Folder Utama
-Susun folder lu persis kayak gini biar kodingannya gak "bentrok":
-- `client/src/components` -> Komponen tampilan (Player, Card, Sidebar).
-- `client/src/components/ui` -> Elemen kecil (Slider, Button, Toast).
-- `client/src/hooks` -> Logika state musik (use-store).
-- `client/src/lib` -> Konfigurasi database & alat bantu (Supabase, Utils).
-- `client/src/pages` -> Halaman utama (Home, Search, Library).
-
-### 2. File Konfigurasi Database (.env)
-Aplikasi ini butuh koneksi ke Supabase. Buat file `.env` di folder paling luar dan isi kuncinya sendiri:
 ```text
-VITE_SUPABASE_URL=MASUKKAN_URL_SUPABASE_LU
-VITE_SUPABASE_ANON_KEY=MASUKKAN_ANON_KEY_LU
-
-📦 Daftar Library yang Digunakan
-​Kalo lu install manual di terminal/shell, lu harus jalanin perintah ini biar fiturnya gak error:
+npm create vite@latest spotify-clone -- --template react-ts
+cd spotify-clone
+npm install
 npm install lucide-react howler wouter @tanstack/react-query @supabase/supabase-js
+```
 
-🚀 Panduan Penggunaan
-​Salin Kode Utama: Salin isi file App.tsx, Player.tsx, dan SongCard.tsx ke folder masing-masing.
-​Setup Musik: Pastiin file use-store.ts sudah terpasang di folder hooks agar tombol Play bisa berfungsi.
-​Running: Gunakan perintah npm run dev untuk menjalankan aplikasi.
-​Mobile Layout: Jika slider progress di HP tertutup navigasi bawah, cari file Player.tsx dan tambahkan padding-bottom (pb-24) pada container Full-Screen Player.
-​📝 Catatan Penting
-​Project ini menggunakan TypeScript (.tsx / .ts) untuk keamanan kode dan lebih aman dari suspend GitHub.
-​Pastikan font Figtree atau Circular Std sudah terdaftar di index.html agar tampilan navigasi dan teks terlihat mirip dengan aslinya.
-​Semua data lagu ditarik melalui integrasi API yang sudah dikonfigurasi di dalam kodingan.
+B. Untuk Pengguna HP (Termux)
+​Khusus Termux, lu harus install Node.js dulu:
+```text
+pkg update && pkg upgrade
+pkg install nodejs
+npx create-vite spotify-clone --template react-ts
+cd spotify-clone
+npm install
+npm install lucide-react howler wouter @tanstack/react-query @supabase/supabase-js
+```
 
-🛠️ Issues (Laporan Kendala & Struktur Folder)
+Note Termux: Jika error saat install, gunakan termux-chroot sebelum running.
 
-📁 Daftar Folder & File Utama (kalo eror lapor gan)
-Pastiin folder lu isinya lengkap kayak gini:
+STEP 2: GENERATE CODE VIA AI (Pilih AI Favorit Lu)
+​Lu bisa pake Gemini, ChatGPT, Claude, DeepSeek, atau Grok. pake prompt yang gw siapin di bawah biar kodingannya gak hallucinate: satu satu bang ntar eror
+```text
+​1. Setup Database & Hooks (Logic Pertama)
+​"Buatkan file supabase.ts di folder lib untuk koneksi Supabase menggunakan environment variables. Lalu buatkan use-store.ts di folder hooks menggunakan library Howler.js untuk handle state global pemutar musik (Play, Pause, Volume, Next)."
+​2. Setup UI & Components (Tampilan)
+​"Buatkan komponen React Player.tsx (dengan progress bar), SongCard.tsx (dengan hover play), dan Sidebar.tsx (responsif). Gunakan Tailwind CSS dan Lucide Icons. Pastikan layout support Mobile & Desktop."
+​3. Setup Halaman (Pages)
+​"Buatkan halaman Home.tsx (untuk list lagu), Search.tsx (input pencarian), dan Library.tsx (daftar lagu favorit). Hubungkan semuanya di App.tsx menggunakan wouter."
+```
+​📂 STEP 3: STRUKTUR FILES (WAJIB SESUAI!)
+​Pindahkan hasil kodingan dari AI tadi ke folder masing-masing:
+​📁 client/src/components/ -> Player.tsx, SongCard.tsx, Sidebar.tsx.
+​📁 client/src/components/ui/ -> slider.tsx, toast.tsx, button.tsx.
+​📁 client/src/hooks/ -> use-store.ts (Otak Musik).
+​📁 client/src/lib/ -> supabase.ts, uuid-utils.ts.
+​📁 client/src/pages/ -> Home.tsx, Search.tsx, Library.tsx.
 
-1. `client/src/components/`
-   - Isinya: `Player.tsx` (Pemutar musik), `SongCard.tsx` (Kartu lagu), `Sidebar.tsx`.
-2. `client/src/components/ui/`
-   - Isinya: `slider.tsx` (Bar durasi), `toast.tsx` (Notifikasi), `button.tsx`.
-3. `client/src/hooks/`
-   - Isinya: `use-store.ts` (Ini otaknya! Tanpa ini lagu nggak bakal muter).
-4. `client/src/lib/`
-   - Isinya: `supabase.ts` (Koneksi database), `uuid-utils.ts` (ID unik buat Like).
-5. `client/src/pages/`
-   - Isinya: `Home.tsx`, `Search.tsx`, `Library.tsx`.
+​⚙️ STEP 4: KONFIGURASI DATABASE (.env)
+​Buat file .env di folder root (luar) dan isi dengan data dari Dashboard Supabase lu:
+```text
+VITE_SUPABASE_URL=URL_SUPABASE_LU
+VITE_SUPABASE_ANON_KEY=ANON_KEY_LU
+```
+🛠️ STEP 5: OPTIMASI & FIX (Ga baca bisulan)
+​Fix Mobile Layout: kalau slider progress di HP tertutup navigasi bawah, buka Player.tsx dan tambahkan padding-bottom 
+(pb-24) pada container Full-Screen Player.
+​Font Premium: Pastikan font Figtree atau Circular Std sudah terdaftar di index.html agar UI mirip aslinya.
+​TypeScript Safety: Project ini menggunakan format .tsx agar lebih aman dari suspend GitHub dan deteksi error lebih cepat
 
-📝 Cara Lapor Bug / Folder Ilang
-Kalau ada yang nggak sesuai sama daftar di atas, lapor pake format ini:
-
-1. **Judul**: [BUG] Nama Error / Folder yang Ilang
-2. **Deskripsi**: Jelasin kenapa bisa error (Contoh: "Bang, folder hooks gue kok nggak ada file use-store-nya?").
-3. **Screenshot**: Lampirin foto error-nya. 
-   - **Caranya**: Cukup **Copy-Paste** gambar atau **Drag & Drop** foto lu langsung ke kotak pesan GitHub ini. Gak perlu ribet pake link!
-
-Masalah Umum (FAQ):
-- **Folder Kosong**: Kalo folder `hooks`, `lib`, atau `pages` nggak muncul di GitHub, itu karena isinya belum di-upload (Git nggak suka folder kosong). Cek lagi file `.tsx` atau `.ts` lu.
-- **Slider Kepotong**: Itu masalah layout mobile. Langsung cek bagian `Mobile Layout` di atas buat cara benerinnya.
+​📝 CARA LAPOR BUG (ISSUES)
+​Jika ada file yang hilang atau kodingan dari AI ada yang error, lapor ke GitHub dengan cara:
+​Buka tab Issues.
+​Masukkan judul: [BUG] Nama Error.
+​Screenshot: Cukup Copy-Paste atau Drag & Drop foto error lu langsung ke kotak pesan GitHub. Gue (AI) bakal bantu analisa lewat gambar tersebut!
