@@ -2,7 +2,7 @@
 
 Project ini clone platform musik Spotify yang dibangun menggunakan ekosistem modern web development. Fokus utama project ini adalah performa pemutaran musik yang lancar dan sinkronisasi data database. 
 
-> **Catatan:** Cari tahu terlebih dahulu di AI karena files ini belum 100% mempunyai database/fitur yang lengkap.
+> **Catatan:** Cari tahu terlebih dahulu di AI karena files ini belum 100% mempunyai database/fitur yang lengkap bisa ke email saya : skyzoc1a@gmail.com atau wa : 088225879928
 
 ## 🛠️ Persyaratan Sistem (Manual Setup)
 
@@ -35,3 +35,31 @@ npm install lucide-react howler wouter @tanstack/react-query @supabase/supabase-
 ​Project ini menggunakan TypeScript (.tsx / .ts) untuk keamanan kode dan lebih aman dari suspend GitHub.
 ​Pastikan font Figtree atau Circular Std sudah terdaftar di index.html agar tampilan navigasi dan teks terlihat mirip dengan aslinya.
 ​Semua data lagu ditarik melalui integrasi API yang sudah dikonfigurasi di dalam kodingan.
+
+## 🛠️ Issues (Laporan Kendala & Struktur Folder)
+
+### 📁 Daftar Folder & File Utama (kalo eror lapor gan)
+Pastiin folder lu isinya lengkap kayak gini:
+
+1. **`client/src/components/`**
+   - Isinya: `Player.tsx` (Pemutar musik), `SongCard.tsx` (Kartu lagu), `Sidebar.tsx`.
+2. **`client/src/components/ui/`**
+   - Isinya: `slider.tsx` (Bar durasi), `toast.tsx` (Notifikasi), `button.tsx`.
+3. **`client/src/hooks/`**
+   - Isinya: `use-store.ts` (Ini otaknya! Tanpa ini lagu nggak bakal muter).
+4. **`client/src/lib/`**
+   - Isinya: `supabase.ts` (Koneksi database), `uuid-utils.ts` (ID unik buat Like).
+5. **`client/src/pages/`**
+   - Isinya: `Home.tsx`, `Search.tsx`, `Library.tsx`.
+
+### 📝 Cara Lapor Bug / Folder Ilang
+Kalau ada yang nggak sesuai sama daftar di atas, lapor pake format ini:
+
+1. **Judul**: [BUG] Nama Error / Folder yang Ilang
+2. **Deskripsi**: Jelasin kenapa bisa error (Contoh: "Bang, folder hooks gue kok nggak ada file use-store-nya?").
+3. **Screenshot**: Lampirin foto error-nya. 
+   - **Caranya**: Cukup **Copy-Paste** gambar atau **Drag & Drop** foto lu langsung ke kotak pesan GitHub ini. Gak perlu ribet pake link!
+
+**Masalah Umum (FAQ):**
+- **Folder Kosong**: Kalo folder `hooks`, `lib`, atau `pages` nggak muncul di GitHub, itu karena isinya belum di-upload (Git nggak suka folder kosong). Cek lagi file `.tsx` atau `.ts` lu.
+- **Slider Kepotong**: Itu masalah layout mobile. Langsung cek bagian `Mobile Layout` di atas buat cara benerinnya.
