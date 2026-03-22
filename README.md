@@ -29,7 +29,7 @@ npm install lucide-react howler wouter @tanstack/react-query @supabase/supabase-
 Note Termux: Jika error saat install, gunakan termux-chroot sebelum running.
 
 STEP 2: GENERATE CODE VIA AI (Pilih AI Favorit Lu)
-​Lu bisa pake Gemini, ChatGPT, Claude, DeepSeek, atau Grok. pake prompt yang gw siapin di bawah biar kodingannya gak hallucinate: satu satu bang ntar eror
+​ Lu bisa pake Gemini, ChatGPT, Claude, DeepSeek, atau Grok. pake prompt yang gw siapin di bawah biar kodingannya gak hallucinate: satu satu bang ntar eror
 ```text
 ​1. Setup Database & Hooks (Logic Pertama)
 ​"Buatkan file supabase.ts di folder lib untuk koneksi Supabase menggunakan environment variables. Lalu buatkan use-store.ts di folder hooks menggunakan library Howler.js untuk handle state global pemutar musik (Play, Pause, Volume, Next)."
@@ -39,6 +39,7 @@ STEP 2: GENERATE CODE VIA AI (Pilih AI Favorit Lu)
 ​"Buatkan halaman Home.tsx (untuk list lagu), Search.tsx (input pencarian), dan Library.tsx (daftar lagu favorit). Hubungkan semuanya di App.tsx menggunakan wouter."
 ```
 ​📂 STEP 3: STRUKTUR FILES (WAJIB SESUAI!)
+
 ​Pindahkan hasil kodingan dari AI tadi ke folder masing-masing:
 
 ​📁 client/src/components/ -> Player.tsx, SongCard.tsx, Sidebar.tsx.
