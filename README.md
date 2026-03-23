@@ -32,25 +32,45 @@ Note Termux: Jika terjadi error saat instalasi library, jalankan perintah termux
 
 ​1. Setup Database, Schema & Hooks (Logic & Data)
 ```text
-​"Gue lagi bangun Spotify Clone. Buatkan struktur file shared/schema.ts untuk tabel lagu (id, title, artist, coverUrl, audioUrl). Lalu buatkan client/src/lib/supabase.ts untuk koneksi API dan client/src/hooks/use-store.ts menggunakan Howler.js untuk handle Play, Pause, dan Next lagu secara global."
+
+​"Gue mau bangun Spotify Clone Full Stack. Pertama, buatkan shared/schema.ts menggunakan Drizzle ORM atau standar TypeScript untuk tabel songs (id, title, artist, coverUrl, audioUrl, duration) dan playlists.
+​Lalu, buatkan client/src/lib/supabase.ts untuk koneksi API. Terakhir, buatkan client/src/hooks/use-store.ts menggunakan Howler.js dan Zustand (atau React Context) untuk state global musik. Harus ada fungsi: playSong(song), pause(), resume(), next(), previous(), dan volume(val). Pastiin logic durasi lagunya akurat."
 ```
 untuk koneksi database dan client/src/hooks/use-store.ts menggunakan Howler.js untuk handle state global pemutar musik."
 
 ​2. Setup Backend & API (Server Side)
 ```text
-"Buatkan file server/routes.ts menggunakan Express untuk menyediakan API endpoint daftar lagu, dan server/storage.ts 
+"Lanjut ke backend. Buat file server/routes.ts pake Express. Gue butuh API endpoint:
+​GET /api/songs (Ambil semua lagu dari Supabase).
+​GET /api/songs/:id (Ambil detail satu lagu).
+​POST /api/playlists (Buat playlist baru).
+​Buatkan juga server/storage.ts untuk interface penyimpanan datanya. Pastiin ada handling error kalau koneksi database gagal." 
 ```
 untuk logika penyimpanan data ke database."
 
 
 ​3. Setup UI & Components (Frontend)
 ```text
-​"Buatkan komponen React Player.tsx yang punya progress bar musik, SongCard.tsx untuk display album art, dan Sidebar.tsx. Gunakan Tailwind CSS. Pastikan slider progress musik bisa digeser (draggable)."
+​"Sekarang buatkan UI Components di client/src/components/.
+​Player.tsx: Harus ada progress bar yang bisa di-klik/drag (Draggable), display waktu (0:00 / 3:45), tombol shuffle, dan repeat.
+​SongCard.tsx: Tampilan cover album yang punya efek hover 'Play Button' muncul di tengah.
+​Sidebar.tsx: Navigasi yang responsif, ada menu Home, Search, dan Your Library.
+​Gunakan Tailwind CSS dan Lucide Icons. Pastikan kodenya mendukung Dark Mode Spotify."
 ```
 ​4. Setup Halaman (Pages)
 ```text
-​"Buatkan halaman Home.tsx untuk daftar lagu, Search.tsx untuk filter pencarian, dan Library.tsx. Hubungkan semuanya di App.tsx menggunakan library wouter."
+​"Buatkan 3 halaman utama di client/src/pages/:
+​Home.tsx: Tampilkan grid lagu dengan section 'Recently Played'.
+​Search.tsx: Input search yang langsung filter daftar lagu secara real-time.
+​Library.tsx: Tampilkan lagu yang udah di-like.
+​Hubungkan semua halaman di client/src/App.tsx pake library wouter. Tambahkan juga Toaster di root biar kalau ada error/sukses Like lagu muncul notifikasi kecil di pojok."
 ```
+
+​5. Tambahan: Optimasi Mobile & UU
+```text
+"Buatkan hook client/src/hooks/use-mobile.ts untuk mendeteksi ukuran layar. Jika user buka dari HP, buat Player.tsx otomatis berubah jadi mode 'Mini Player' yang bisa di-expand jadi 'Full Screen Player' dengan padding bawah pb-24 agar tidak tertutup navigasi."
+```
+
 
 ​📂 STEP 3: STRUKTUR FILES (WAJIB SESUAI!)
 
