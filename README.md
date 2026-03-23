@@ -50,7 +50,9 @@ untuk logika penyimpanan data ke database."
 ```
 
 ​📂 STEP 3: STRUKTUR FILES (WAJIB SESUAI!)
+
 ​Pindahkan hasil kodingan ke folder masing-masing sesuai struktur Replit Pro:
+
 ​📁 client/src/components/ -> Player.tsx, SongCard.tsx, Sidebar.tsx.
 ​📁 client/src/components/ui/ -> slider.tsx, toast.tsx, button.tsx, progress.tsx, dialog.tsx.
 ​📁 client/src/hooks/ -> use-store.ts (Otak Musik), use-mobile.ts (Auto-Responsive).
