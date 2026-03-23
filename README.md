@@ -8,8 +8,7 @@ Project ini clone platform musik Spotify yang dibangun menggunakan ekosistem mod
 ​A. Untuk Pengguna Laptop/PC (VS Code/Terminal)
 ​Jalankan perintah ini secara berurutan:
 ```text
-npm create vite@latest spotify-clone -- --template react-ts
-cd spotify-clone
+git clone https://github.com/Skyzo-himonoto/SpotifyClone-data
 npm install
 npm install lucide-react howler wouter @tanstack/react-query @supabase/supabase-js drizzle-orm express
 npm run dev
@@ -18,9 +17,8 @@ B. Untuk Pengguna HP (Termux)
 ​Wajib install Node.js terlebih dahulu:
 ```text
 pkg update && pkg upgrade
-pkg install nodejs-lts
-npx create-vite spotify-clone --template react-ts
-cd spotify-clone
+pkg install nodejs-lts git
+git clone https://github.com/Skyzo-himonoto/SpotifyClone-data
 npm install
 npm install lucide-react howler wouter @tanstack/react-query @supabase/supabase-js
 npm run dev -- --host
