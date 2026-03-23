@@ -54,12 +54,18 @@ untuk logika penyimpanan data ke database."
 ​Pindahkan hasil kodingan ke folder masing-masing sesuai struktur Replit Pro:
 
 ​📁 client/src/components/ -> Player.tsx, SongCard.tsx, Sidebar.tsx.
-​📁 client/src/components/ui/ -> slider.tsx, toast.tsx, button.tsx, progress.tsx, dialog.tsx.
-​📁 client/src/hooks/ -> use-store.ts (Otak Musik), use-mobile.ts (Auto-Responsive).
+
+📁 client/src/components/ui/ -> slider.tsx, toast.tsx, button.tsx, progress.tsx, dialog.tsx.
+​
+📁 client/src/hooks/ -> use-store.ts (Otak Musik), use-mobile.ts (Auto-Responsive).
+
 ​📁 client/src/lib/ -> supabase.ts, uuid-utils.ts.
-​📁 client/src/pages/ -> Home.tsx, Search.tsx, Library.tsx.
-​📁 server/ -> routes.ts, storage.ts, index.ts.
-​📁 shared/ -> schema.ts.
+​
+📁 client/src/pages/ -> Home.tsx, Search.tsx, Library.tsx.
+​
+📁 server/ -> routes.ts, storage.ts, index.ts.
+​
+📁 shared/ -> schema.ts.
 
 
 ​⚙️ STEP 4: KONFIGURASI DATABASE (.env)
