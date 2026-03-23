@@ -9,18 +9,18 @@ Project ini clone platform musik Spotify yang dibangun menggunakan ekosistem mod
 ​Jalankan perintah ini secara berurutan:
 ```text
 git clone https://github.com/Skyzo-himonoto/SpotifyClone-data
+cd SpotifyClone-data
 npm install
-npm install lucide-react howler wouter @tanstack/react-query @supabase/supabase-js drizzle-orm express
 npm run dev
 ```
 B. Untuk Pengguna HP (Termux)
 ​Wajib install Node.js terlebih dahulu:
 ```text
-pkg update && pkg upgrade
-pkg install nodejs-lts git
+pkg update && pkg upgrade -y
+pkg install nodejs-lts git -y
 git clone https://github.com/Skyzo-himonoto/SpotifyClone-data
+cd SpotifyClone-data
 npm install
-npm install lucide-react howler wouter @tanstack/react-query @supabase/supabase-js
 npm run dev -- --host
 ```
 Note Termux: Jika terjadi error saat instalasi library, jalankan perintah termux-chroot sebelum running
