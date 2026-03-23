@@ -12,6 +12,7 @@ npm create vite@latest spotify-clone -- --template react-ts
 cd spotify-clone
 npm install
 npm install lucide-react howler wouter @tanstack/react-query @supabase/supabase-js drizzle-orm express
+npm run dev
 ```
 B. Untuk Pengguna HP (Termux)
 ​Wajib install Node.js terlebih dahulu:
@@ -22,6 +23,7 @@ npx create-vite spotify-clone --template react-ts
 cd spotify-clone
 npm install
 npm install lucide-react howler wouter @tanstack/react-query @supabase/supabase-js
+npm run dev -- --host
 ```
 Note Termux: Jika terjadi error saat instalasi library, jalankan perintah termux-chroot sebelum running
 
@@ -30,7 +32,7 @@ Note Termux: Jika terjadi error saat instalasi library, jalankan perintah termux
 
 ​1. Setup Database, Schema & Hooks (Logic & Data)
 ```text
-​"Buatkan file shared/schema.ts untuk tabel lagu (judul, artist, url, duration). Lalu buatkan client/src/lib/supabase.ts
+​"Gue lagi bangun Spotify Clone. Buatkan struktur file shared/schema.ts untuk tabel lagu (id, title, artist, coverUrl, audioUrl). Lalu buatkan client/src/lib/supabase.ts untuk koneksi API dan client/src/hooks/use-store.ts menggunakan Howler.js untuk handle Play, Pause, dan Next lagu secara global."
 ```
 untuk koneksi database dan client/src/hooks/use-store.ts menggunakan Howler.js untuk handle state global pemutar musik."
 
@@ -43,11 +45,11 @@ untuk logika penyimpanan data ke database."
 
 ​3. Setup UI & Components (Frontend)
 ```text
-​"Buatkan komponen React Player.tsx (dengan progress bar), SongCard.tsx (hover play), dan Sidebar.tsx. Tambahkan juga komponen UI pendukung seperti slider.tsx dan toast.tsx menggunakan Tailwind CSS."
+​"Buatkan komponen React Player.tsx yang punya progress bar musik, SongCard.tsx untuk display album art, dan Sidebar.tsx. Gunakan Tailwind CSS. Pastikan slider progress musik bisa digeser (draggable)."
 ```
 ​4. Setup Halaman (Pages)
 ```text
-​"Buatkan halaman Home.tsx (Daftar lagu), Search.tsx (Input pencarian), dan Library.tsx (Koleksi favorit). Hubungkan semua navigasi di App.tsx menggunakan wouter."
+​"Buatkan halaman Home.tsx untuk daftar lagu, Search.tsx untuk filter pencarian, dan Library.tsx. Hubungkan semuanya di App.tsx menggunakan library wouter."
 ```
 
 ​📂 STEP 3: STRUKTUR FILES (WAJIB SESUAI!)
